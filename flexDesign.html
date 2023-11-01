@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 275px;
+            background-color: rgb(44, 62, 80);
+            color: white;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.75em;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 18px;
+        }
+
+        nav ul li {
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 16px 24px;
+            transition: all ease .4s;
+        }
+
+        nav ul li:hover {
+            color: #1abc9c;
+
+        }
+
+        nav ul li:first-child {
+            background-color: #1abc9c;
+            border-radius: 6px;
+        }
+
+        nav ul li:first-child:hover {
+            background-color: white;
+            border-radius: 6px;
+        }
+
+        main {
+            background-color: #1abc9c;
+            height: 75vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px
+        }
+
+        main img {
+            width: 250px;
+        }
+
+        main h1 {
+            font-size: 48px;
+        }
+
+        main p {
+            font-size: 18px;
+        }
+        main i {
+            font-size: 52px;
+        }
+
+        @media (max-width:992px) {
+            nav {
+                flex-direction: column;
+                gap: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            START BOOTSTRAP
+        </div>
+        <ul>
+            <li>PORTFOLIO</li>
+            <li>ABOUT</li>
+            <li>CONTACT</li>
+        </ul>
+    </nav>
+    <main>
+        <div>
+            <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" alt="">
+            <h1>START BOOTSTRAP</h1>
+            <i class="fa-solid fa-star"></i>
+            <p>Graphic Artist - Web Designer - Illustrator</p>
+
+        </div>
+
+    </main>
+
+    <section>
+
+    </section>
+</body>
+
+</html>
