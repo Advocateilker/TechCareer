@@ -52,21 +52,20 @@ Dizinin en küçük sayısıı for döngüsü ile bul
 */
 
 var numbers = [33, 11, -5, 20, 1, 55, 100, 2, 94, 55, 11]
-var enBuyuk=numbers[0];
+var enBuyuk = numbers[0];
 
-for(let i=0;i<numbers.length;i++){
-    if(numbers[i]>enBuyuk)
-    {
-        enBuyuk=numbers[i];
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > enBuyuk) {
+        enBuyuk = numbers[i];
     }
 }
 
 console.log(enBuyuk)
 
-var enKucuk=numbers[0];
-for(let i=0;i<numbers.length;i++){
-    if(enKucuk>numbers[i]){
-        enKucuk=numbers[i]
+var enKucuk = numbers[0];
+for (let i = 0; i < numbers.length; i++) {
+    if (enKucuk > numbers[i]) {
+        enKucuk = numbers[i]
     }
 }
 
