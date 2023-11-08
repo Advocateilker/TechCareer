@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top {
+            display: flex;
+            gap: 20px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bottom {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            width: 400px;
+            margin-top: 22px;
+        }
+
+        #result {
+            display: flex;
+            align-items: center;
+            gap: 22px
+        }
+
+        #result span {
+            font-weight: 800;
+            font-size: 35px
+        }
+
+        button {
+            padding: 8px 16px;
+            width: 100px;
+            background-color: transparent;
+            outline: none;
+            border-radius: 10px;
+
+        }
+
+        button:hover {
+
+            background-color: black;
+            color: white;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="field">
+            <label for="Number-1">Number-1</label>
+            <input type="number" id="Number1">
+
+        </div>
+        <div class="field">
+
+            <label for="Number-2">Number-2</label>
+            <input type="number" id="Number2">
+
+        </div>
+
+        <div id="result">
+            <p>RESULT:</p>
+            <span id="resultSpan">500</span>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <button onclick="topla()">
+            TOPLA
+        </button>
+        <button onclick="cikar()">
+            ÇIKAR
+        </button>
+        <button onclick="carp()">
+            ÇARP
+        </button>
+        <button onclick="bol()">
+            BÖL
+        </button>
+        <button onclick="karekok()">
+            KAREKÖK
+        </button>
+    </div>
+
+
+
+
+    <script>
+        const input1 = document.getElementById("Number1")
+        const input2 = document.getElementById("Number2")
+        const resultSpan = document.getElementById("resultSpan")
+
+        console.log(input1.value)
+
+        function sifirla() {
+            input1.value = ""
+            input2.value = ""
+
+        }
+
+        function topla() {
+            const result = Number(input1.value) + Number(input2.value)
+
+            resultSpan.innerText = result
+
+            sifirla()
+
+        }
+        function cikar() {
+            const result = Number(input1.value) - Number(input2.value)
+
+            resultSpan.innerText = result
+            sifirla()
+
+        }
+        function carp() {
+            const result = Number(input1.value) * Number(input2.value)
+
+            resultSpan.innerText = result
+            sifirla()
+
+        }
+        function bol() {
+            const result = Number(input1.value) / Number(input2.value)
+
+            resultSpan.innerText = result
+            sifirla()
+
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

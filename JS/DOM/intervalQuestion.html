@@ -80,12 +80,7 @@
         var b = 0
         var c = 0
 
-        const clear = () => {
-            var a = 0
-            var b = 0
-            var c = 0
 
-        }
 
         function start() {
             var interval = setInterval(() => {
@@ -94,8 +89,6 @@
                 var x = Math.floor(Math.random() * 50)
                 var y = Math.floor(Math.random() * 50)
                 var z = Math.floor(Math.random() * 50)
-
-
 
                 a += x
                 b += y
@@ -108,7 +101,6 @@
                 id1.style.marginLeft = a + "px"
                 id2.style.marginLeft = b + "px"
                 id3.style.marginLeft = c + "px"
-
 
                 if (a >= window.innerWidth - 320) {
                     clearInterval(interval);
