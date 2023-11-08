@@ -65,17 +65,26 @@
     <script>
 
         function generate() {
-            var randomNumbers = []
+            const randomNumbers = []
 
             while (randomNumbers.length < 6) {
-            var randomNumber = Math.floor(Math.random() * 49);
+            const randomNumber = Math.floor(Math.random() * 49);
             if (!randomNumbers.includes(randomNumber)) {
                 randomNumbers.push(randomNumber);
             }
         }
             console.log(randomNumbers)
 
+            const divs = document.querySelectorAll(".box")
+
+            for (let i = 0; i < divs.length; i++) {
+            divs[i].innerText = randomNumbers[i];
         }
+        }
+
+
+
+
 
     </script>
 </body>
