@@ -36,6 +36,7 @@
 
         }
 
+
         .field {
             display: flex;
             position: relative;
@@ -79,8 +80,15 @@
         var b = 0
         var c = 0
 
+        const clear = () => {
+            var a = 0
+            var b = 0
+            var c = 0
+
+        }
+
         function start() {
-            setInterval(() => {
+            var interval = setInterval(() => {
 
 
                 var x = Math.floor(Math.random() * 50)
@@ -97,13 +105,35 @@
                 const id2 = document.getElementById("2")
                 const id3 = document.getElementById("3")
 
-
                 id1.style.marginLeft = a + "px"
                 id2.style.marginLeft = b + "px"
                 id3.style.marginLeft = c + "px"
 
 
-            }, 500);
+                if (a >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 1 kazandı!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+                if (b >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 2 kazandı!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+                if (c >= window.innerWidth - 320) {
+                    clearInterval(interval);
+                    alert("At 3 kazandı!");
+                    id1.style.marginLeft = 0 + "px"
+                    id2.style.marginLeft = 0 + "px"
+                    id3.style.marginLeft = 0 + "px"
+                }
+
+
+            }, 50);
 
         }
 
