@@ -39,22 +39,22 @@
 <body>
     <div class="container">
         <div class="box">
-            1
+            *
         </div>
         <div class="box">
-            2
+            *
         </div>
         <div class="box">
-            3
+            *
         </div>
         <div class="box">
-            4
+            *
         </div>
         <div class="box">
-            5
+            *
         </div>
         <div class="box">
-            6
+            *
         </div>
 
     </div>
@@ -68,24 +68,19 @@
             const randomNumbers = []
 
             while (randomNumbers.length < 6) {
-            const randomNumber = Math.floor(Math.random() * 49);
-            if (!randomNumbers.includes(randomNumber)) {
-                randomNumbers.push(randomNumber);
+                const randomNumber = Math.floor(Math.random() * 49);
+                if (!randomNumbers.includes(randomNumber)) {
+                    randomNumbers.push(randomNumber);
+                }
             }
-        }
-            console.log(randomNumbers)
+            //console.log(randomNumbers)
 
             const divs = document.querySelectorAll(".box")
 
             for (let i = 0; i < divs.length; i++) {
-            divs[i].innerText = randomNumbers[i];
+                divs[i].innerHTML = randomNumbers[i];
+            }
         }
-        }
-
-
-
-
-
     </script>
 </body>
 
