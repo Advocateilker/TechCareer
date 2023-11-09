@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="add()">ADD</button>
+
+    <ul id="field">
+
+    </ul>
+
+    <script>
+        let randomNumbers = []
+        function add() {
+
+            let field = document.getElementById('field')
+            let li = document.createElement("li")
+
+            const randomNumber = Math.floor(Math.random() * 100);
+
+            if(randomNumbers.length >15){
+                return alert("yeter 15 defa çalıştı")
+            }
+
+
+            for (let i = 0; i < 15; i++) {
+                if (!randomNumbers.includes(randomNumber)) {
+                    randomNumbers.push(randomNumber);
+                }
+
+            }
+
+
+            li.innerText = randomNumber;
+            field.appendChild(li)
+        }
+
+    </script>
+</body>
+
+</html>

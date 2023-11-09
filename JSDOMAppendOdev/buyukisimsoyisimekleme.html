@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Name</label>
+        <input type="text" id="name">
+    </div>
+    <div>
+        <label for="">SurName</label>
+        <input type="text" id="surname">
+    </div>
+    <button onclick="add()">ADD</button>
+
+    <ul id="field">
+
+    </ul>
+
+    <script>
+        function add() {
+            let name = document.getElementById('name').value
+            let surName = document.getElementById('surname').value
+            let field = document.getElementById('field')
+
+            if(name.trim() == "" && surName.trim()== ""){
+                return alert("alanları boş bırakmayınız")
+            }
+
+            let li = document.createElement("li")
+            li.innerText=name.toUpperCase() + " " + surName.toUpperCase()
+
+            field.appendChild(li)
+        }
+
+    </script>
+</body>
+
+</html>
