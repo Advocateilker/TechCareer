@@ -29552,6 +29552,23 @@
         let ul = document.querySelector("ul")
         let orders96 = []
 
+        moment.locale("TR-tr");
+        i = 0;
+        orders.forEach((item) => {
+            let date = new Date(item.orderDate);
+
+            let year = date.getFullYear();
+            let month = date.getMonth();
+
+            if (year === 1996 && month === 10) {
+                i++;
+            }
+        });
+
+        let li = document.createElement("li");
+        li.innerHTML = `1996 Aralıktaki sipariş sayısı: ${i}`
+        ul.appendChild(li);
+
         orders.forEach(item => {
             var date = new Date(item.orderDate);
             var year = date.getFullYear();
