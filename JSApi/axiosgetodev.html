@@ -23,30 +23,24 @@
 
 <script>
 
-const ul=document.getElementById("ul")
-const length=document.querySelector(".length")
+    const ul = document.getElementById("ul")
+    const length = document.querySelector(".length")
 
- const handleApi=()=>{
+
+    const handleApi = () => {
         axios.get("https://northwind.vercel.app/api/products")
-        .then((res)=> {
-            res.data.forEach(product => {
-
-                const li = document.createElement("li")
-
-                li.innerHTML=`
+            .then((res) => {
+                res.data.forEach(product => {
+                    const li = document.createElement("li")
+                    li.innerHTML = `
                 ${product.name} -  ${product.unitPrice}  
                 `
+                    ul.appendChild(li)
 
-                ul.appendChild(li)
-
-
-               
-            });
-
-            length.innerHTML=`Toplam Ürün: ${res.data.length}`
-        })
-
-
+                });
+                length.innerHTML = `Toplam Ürün: ${res.data.length}`
+            })
+            .catch((err)=> console.log(err))
     }
 </script>
 
