@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"
+        integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type="text">
+    </div>
+    <div>
+        <label for="unitPrice">UnitPrice</label>
+        <input id="unitPrice" type="text">
+    </div>
+    <div>
+        <label for="unitsInStock">UnitsInStock</label>
+        <input id="unitsInStock" type="text">
+    </div>
+    <div>
+        <button onclick="add()">ADD</button>
+    </div>
+
+
+
+    <script>
+
+
+
+
+
+
+        console.log(unitPrice)
+        const add = () => {
+
+            let name = document.getElementById('name').value
+            let unitPrice = document.getElementById('unitPrice').value
+            let unitsInStock = document.getElementById('unitsInStock').value
+
+
+            let numberUnitPrice = Number(unitPrice)
+            let numberUnitsInStock = Number(unitsInStock)
+
+            if (unitPrice <= 0 || unitsInStock <= 0) {
+                alert("değerler sıfırdan büyük olmalı")
+                return
+
+            } else if (isNaN(numberUnitPrice) || isNaN(numberUnitsInStock)) {
+                alert("lütfen sayısal değer giriniz")
+                return
+            } else {
+                var newProduct = {
+
+                    name,
+                    unitPrice: numberUnitPrice,
+                    unitsInStock: numberUnitsInStock
+                }
+                axios.post("https://northwind.vercel.app/api/products", newProduct)
+                    .then((res) => {
+
+                        console.log("success")
+                    })
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>
