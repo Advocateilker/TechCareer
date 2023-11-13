@@ -29553,6 +29553,7 @@
         let orders96 = []
 
 
+
         orders.forEach(item => {
             var date = new Date(item.orderDate);
             var year = date.getFullYear();
@@ -29567,7 +29568,7 @@
 
         `
 
-        ul.appendChild(li)
+            ul.appendChild(li)
 
             if (year == 1996 && month == 11) {
                 orders96.push(item)
@@ -29575,12 +29576,12 @@
             let delays = moment(item.orderDate).diff(item.shippedDate, 'days')
 
             if (delays < -5 && delays > -10) {
-                console.log("5 ile 10 gün arası geciken siparişler: ",item.shipName)
+                console.log("5 ile 10 gün arası geciken siparişler: ", item.shipName)
             }
 
         })
 
-        console.log("1996 Yılı Aralık Ayındaki Sipariş Sayısı: ",orders96.length)
+        console.log("1996 Yılı Aralık Ayındaki Sipariş Sayısı: ", orders96.length)
 
 
     </script>
