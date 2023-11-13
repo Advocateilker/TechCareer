@@ -29552,27 +29552,22 @@
         let ul = document.querySelector("ul")
         let orders96 = []
 
-        moment.locale("TR-tr");
-        i = 0;
-        orders.forEach((item) => {
-            let date = new Date(item.orderDate);
-
-            let year = date.getFullYear();
-            let month = date.getMonth();
-
-            if (year === 1996 && month === 10) {
-                i++;
-            }
-        });
-
-        let li = document.createElement("li");
-        li.innerHTML = `1996 Aralıktaki sipariş sayısı: ${i}`
-        ul.appendChild(li);
 
         orders.forEach(item => {
             var date = new Date(item.orderDate);
             var year = date.getFullYear();
             var month = date.getMonth()
+
+            const li = document.createElement("li")
+
+            li.innerHTML = `
+        
+            ${moment(item.orderDate).format("D MMMM YYYY hh:mm A")}
+
+
+        `
+
+        ul.appendChild(li)
 
             if (year == 1996 && month == 11) {
                 orders96.push(item)
@@ -29580,17 +29575,12 @@
             let delays = moment(item.orderDate).diff(item.shippedDate, 'days')
 
             if (delays < -5 && delays > -10) {
-                console.log(item.shipName)
+                console.log("5 ile 10 gün arası geciken siparişler: ",item.shipName)
             }
 
-            ul.innerHTML = `
-        
-        <li> ${moment(item.orderDate).format("DD/MM/YYYY dddd")} <li/>
-
-        `
         })
 
-        console.log(orders96.length)
+        console.log("1996 Yılı Aralık Ayındaki Sipariş Sayısı: ",orders96.length)
 
 
     </script>
