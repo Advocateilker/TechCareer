@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+        integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- axios sdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"
+        integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 25px;
+            position: sticky;
+            top: 0;
+            background-color: black;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .left button {
+            background-color: green;
+            padding: 5px 10px;
+            outline: none;
+            border-radius: 12px;
+        }
+
+        .right button {
+            background-color: red;
+            padding: 5px 10px;
+            outline: none;
+            border-radius: 12px;
+        }
+
+        input {
+            padding: 4px 8px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
+
+        input:focus {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="left">
+            <input id="companyName" type="text" placeholder="Company Name">
+            <input id="contactName" type="text" placeholder="Contact Name">
+            <input id="contactTitle" type="text" placeholder="Contact Title">
+            <div>
+                <button type="button" onclick="add()">ADD</button>
+            </div>
+        </div>
+
+        <div class="right">
+            <input id="idDelete" type="text" placeholder="id giriniz">
+            <button type="button" onclick="remove()">DELETE</button>
+        </div>
+
+    </div>
+
+
+    <table class="px-5 m-5 table table-hover" id="dataTable">
+
+    </table>
+
+    <script>
+        //Axios için BaseUrl oluşturuldu.
+        const baseURL = "https://northwind.vercel.app/api/customers";
+        //Tablo DOM için HTML tarafından Çekildi.
+        let table = document.getElementById("dataTable");
+
+        //Apideki verilerin ekrana basılma fonksiyonu
+        const getData = () => {
+            axios.get(baseURL)
+                .then(res => {
+                    let tableHTML = `
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">Contact Name</th>
+                            <th scope="col">Contact Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+                    res.data.forEach((i, index) => {
+                        tableHTML += `
+                    <tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${i.companyName}</td>
+                        <td>${i.contactName}</td>
+                        <td>${i.contactTitle}</td>
+                    </tr>`;
+                    });
+
+                    tableHTML += `
+            </tbody>`;
+                    table.innerHTML = tableHTML;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+
+        getData();
+
+        //Api'ye yeni veri ekleme fonksiyonu
+        const add = () => {
+            let companyName = document.getElementById("companyName").value;
+            let contactName = document.getElementById("contactName").value;
+            let contactTitle = document.getElementById("contactTitle").value;
+
+            newData = {
+                companyName,
+                contactName,
+                contactTitle
+            }
+
+            axios.post(baseURL, newData).then(() => {
+
+                getData();
+
+                document.getElementById("companyName").value = "";
+                document.getElementById("contactName").value = "";
+                document.getElementById("contactTitle").value = "";
+
+            }).catch(error => {
+                console.error("Error adding data:", error);
+            })
+        }
+
+        //id üzerinden hem ekrandan hem apiden veri silme fonksiyonu
+        const remove = () => {
+            let idDelete = document.getElementById("idDelete").value;
+            axios.delete(`${baseURL}/${idDelete}`).then(() => getData());
+        }
+    </script>
+
+</body>
+
+</html>
