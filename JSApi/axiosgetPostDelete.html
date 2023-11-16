@@ -169,7 +169,9 @@
         //id üzerinden hem ekrandan hem apiden veri silme fonksiyonu
         const remove = () => {
             let idDelete = document.getElementById("idDelete").value;
-            axios.delete(`${baseURL}/${idDelete}`).then(() => getData());
+            axios.delete(`${baseURL}/${idDelete}`).then(() => {
+                alert("Veri Silme İşlemi Başarılı Sonuçlandı")
+                getData()});
         }
     </script>
 
