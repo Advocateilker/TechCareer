@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
         integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- axios sdn -->
+    <!-- axios sdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"
         integrity="sha512-m9S8W3a9hhBHPFAbEIaG7J9P92dzcAWwM42VvJp5n1/M599ldK6Z2st2SfJGsX0QR4LfCVr681vyU5vW8d218w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -22,7 +22,7 @@
             padding: 25px;
             position: sticky;
             top: 0;
-            background-color: black;
+            background-color: rgb(92, 83, 83);
         }
 
         .left {
@@ -56,7 +56,7 @@
         }
 
         input {
-            padding: 4px 8px;
+            padding: 6px 12px;
             border-radius: 10px;
             outline: none;
             border: none;
@@ -82,7 +82,7 @@
         </div>
 
         <div class="right">
-            <input id="idDelete" type="text" placeholder="id giriniz">
+            <input id="idDelete" type="text" placeholder="Id giriniz">
             <button type="button" onclick="remove()">DELETE</button>
         </div>
 
@@ -96,7 +96,7 @@
     <script>
         //Axios için BaseUrl oluşturuldu.
         const baseURL = "https://northwind.vercel.app/api/customers";
-        
+
         //Tablo DOM için HTML tarafından Çekildi.
         let table = document.getElementById("dataTable");
 
@@ -125,8 +125,7 @@
                     </tr>`;
                     });
 
-                    tableHTML += `
-            </tbody>`;
+                    tableHTML += `</tbody>`;
                     table.innerHTML = tableHTML;
                 })
                 .catch(error => {
@@ -142,13 +141,19 @@
             let contactName = document.getElementById("contactName").value;
             let contactTitle = document.getElementById("contactTitle").value;
 
-            newData = {
-                companyName,
-                contactName,
-                contactTitle
+            if (companyName.trim() == "" || contactName.trim() == "" || contactTitle.trim() == "") {
+                alert("bütün alanları doldurunuz.")
+            } else {
+                newData = {
+                    companyName,
+                    contactName,
+                    contactTitle
+                }
             }
 
+
             axios.post(baseURL, newData).then(() => {
+                alert("Veri Ekleme İşlemi Başarılı Sonuçlandı")
 
                 getData();
 
