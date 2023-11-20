@@ -1,0 +1,118 @@
+{
+    "users":[
+        {
+            "id":2,
+            "name":"Ahmet",
+            "lastname":"Yılmaz",
+            "title":"Full Stack Developer"
+        },
+        {
+            "id":3,
+            "name":"Ece",
+            "lastname":"Demir",
+            "title":"UX/UI Designer"
+        },
+        {
+            "id":4,
+            "name":"Mehmet",
+            "lastname":"Aydın",
+            "title":"Backend Developer"
+        },
+        {
+            "id":5,
+            "name":"Ayşe",
+            "lastname":"Kaya",
+            "title":"Frontend Developer"
+        },
+        {
+            "id":6,
+            "name":"Cem",
+            "lastname":"Şen",
+            "title":"DevOps Engineer"
+        },
+        {
+            "id":7,
+            "name":"Selin",
+            "lastname":"Öztürk",
+            "title":"Data Scientist"
+        },
+        {
+            "id":8,
+            "name":"Oğuz",
+            "lastname":"Doğan",
+            "title":"Mobile App Developer"
+        },
+        {
+            "id":9,
+            "name":"Begüm",
+            "lastname":"Aydın",
+            "title":"Software Engineer"
+        },
+        {
+            "id":10,
+            "name":"Can",
+            "lastname":"Erdem",
+            "title":"QA Engineer"
+        },
+        {
+            "id":11,
+            "name":"Gizem",
+            "lastname":"Koç",
+            "title":"Product Manager"
+        },
+        {
+            "id":12,
+            "name":"Emre",
+            "lastname":"Çelik",
+            "title":"Cloud Architect"
+        },
+        {
+            "id":13,
+            "name":"Zeynep",
+            "lastname":"Güneş",
+            "title":"System Analyst"
+        },
+        {
+            "id":14,
+            "name":"Tolga",
+            "lastname":"Yıldırım",
+            "title":"Security Engineer"
+        },
+        {
+            "id":15,
+            "name":"Deniz",
+            "lastname":"Acar",
+            "title":"Business Analyst"
+        },
+        {
+            "id":16,
+            "name":"Fatma",
+            "lastname":"Özkan",
+            "title":"Network Engineer"
+        },
+        {
+            "id":17,
+            "name":"Levent",
+            "lastname":"Kurt",
+            "title":"Database Administrator"
+        },
+        {
+            "id":18,
+            "name":"Gül",
+            "lastname":"Bilgin",
+            "title":"AI Specialist"
+        },
+        {
+            "id":19,
+            "name":"Serkan",
+            "lastname":"Turan",
+            "title":"UI Developer"
+        },
+        {
+            "id":20,
+            "name":"Esra",
+            "lastname":"Korkmaz",
+            "title":"Embedded Systems Engineer"
+        }
+    ]
+}
