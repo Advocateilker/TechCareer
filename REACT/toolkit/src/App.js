@@ -7,7 +7,8 @@ import Detail from './components/Detail'
 import BasketPage from './components/BasketPage'
 import { useContext } from 'react'
 import { BasketContext } from './context/BasketContext'
-import MuiWorking from './components/MuiWorking'
+import LikesPages from './components/LikesPages'
+
 
 const App = () => {
 
@@ -21,7 +22,8 @@ const App = () => {
   <BrowserRouter>
   <div style={{display:"flex", justifyContent:"space-between", padding:"10px 120px"}}>
     <Link className='btn btn-primary' to={"/"}>HOME</Link>
-    <Link className='btn btn-dark'  to={"/mui"}>MUI</Link>
+    <Link className='btn btn-dark'  to={"/likes"}>LIKES</Link>
+  
 
     <Link className='btn btn-dark'  to={"/products"}>PRODUCTS</Link>
     <Link className='btn btn-danger' to={"/basket"}> BASKET
@@ -33,7 +35,8 @@ const App = () => {
     <Route path='/' element={<Home/>}/>
     <Route path='/products' element={<Products/>}/>  
     <Route path='/basket' element={<BasketPage/>}/> 
-    <Route path='/mui' element={<MuiWorking/>}/> 
+    <Route path='/likes' element={<LikesPages/>}/> 
+ 
 
     <Route path='/products/:id' element={<Detail/>}/>
     </Routes>
